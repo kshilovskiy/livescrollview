@@ -18,6 +18,7 @@ gen/
 *.ipr
 *.iws
 .idea/
+out/
 
 #Eclipse Ignore from github
 *.pydevproject
@@ -37,3 +38,4 @@ local.properties
 
 # Local configuration file (sdk path, etc)
 local.properties
+.DS_Store
