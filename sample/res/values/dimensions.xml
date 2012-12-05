@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="min_image_height">30dp</dimen>
+    <dimen name="max_image_height">130dp</dimen>
+    <dimen name="top_offset">148dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+
+    <dimen name="text_medium">18sp</dimen>
+</resources>

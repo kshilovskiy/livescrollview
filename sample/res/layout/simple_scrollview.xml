@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:livescrollview="http://schemas.android.com/apk/res/com.kshilovskiy.listview"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+        >
+
+    <com.kshilovskiy.livescrollview.LiveScrollView
+            android:id="@+id/liveScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            livescrollview:maxResizableHeight="@dimen/max_image_height"
+            livescrollview:minResizableHeight="@dimen/min_image_height"
+            android:fillViewport="true"
+            />
+</LinearLayout>
+
