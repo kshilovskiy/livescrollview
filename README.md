@@ -6,11 +6,12 @@ LiveScrollView - is a small library which allows you to additional visual effect
 Screenshot & Demo Video
 -----------------------
 
-Click the screenshot to watch demo video
+
 <a style="float:right" href="http://youtu.be/y-hxAqm3ezo" target="_blank">
   ![Screenshot](https://raw.github.com/kshilovskiy/livescrollview/master/screenshot.png)
 </a>
 
+Click the screenshot to watch demo video or follow this <a href="http://youtu.be/y-hxAqm3ezo">link</a>
 
 Usage
 -------------
