@@ -21,6 +21,7 @@ class NonScrollableListView extends LinearLayout {
 
     public NonScrollableListView(Context context) {
         super(context);
+        //If view is created via code the defult orientation will be vertical
         setOrientation(VERTICAL);
     }
 
@@ -32,6 +33,9 @@ class NonScrollableListView extends LinearLayout {
         super(context, attrs, defStyle);
     }
 
+    /**
+     * Registers local observer once the view is attached  to a window
+     */
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -41,6 +45,9 @@ class NonScrollableListView extends LinearLayout {
         }
     }
 
+    /**
+     * Removes local observer once the view is detached  from a window
+     */
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
@@ -49,6 +56,10 @@ class NonScrollableListView extends LinearLayout {
         }
     }
 
+    /**
+     * Sets adapter to generate child views and registers local DataSetObserver
+     * @param adapter
+     */
     public void setAdapter(BaseAdapter adapter) {
         this.mAdapter = adapter;
 
@@ -62,6 +73,10 @@ class NonScrollableListView extends LinearLayout {
         mDataSetObserver.onChanged();
     }
 
+    /**
+     * Fills current View with children.
+     * Existing children are used if layout update is required. This is done in order top optimize child view creation.
+     */
     private void fillChildViews() {
         if (mAdapter != null) {
             int requiredChilrenCount = mAdapter.getCount();
@@ -105,10 +120,17 @@ class NonScrollableListView extends LinearLayout {
         }
     }
 
+    /**
+     * Specifies click listener for each item
+     * @param listener
+     */
     public void setOnItemClickListener(OnItemClickListener listener) {
         mItemClickListener = listener;
     }
 
+    /**
+     * Updates layout once the data changes
+     */
     private class AdapterDataSetObserver extends DataSetObserver {
         @Override
         public void onChanged() {
