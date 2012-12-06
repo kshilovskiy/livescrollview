@@ -27,7 +27,7 @@ public class SimpleArrayAdapter extends ArrayAdapter {
         mInflater = LayoutInflater.from(context);
         mItemTitles = objects;
 
-        mDrawables = geberateDrawableArray(context, objects.length);
+        mDrawables = generateDrawableArray(context, objects.length);
     }
 
     @Override
@@ -56,7 +56,13 @@ public class SimpleArrayAdapter extends ArrayAdapter {
         return convertView;
     }
 
-    private Drawable[] geberateDrawableArray(Context context, int count){
+    /**
+     * Generates an array of random drawables from a set of 3 pictures
+     * @param context
+     * @param count
+     * @return
+     */
+    private Drawable[] generateDrawableArray(Context context, int count){
         Drawable[] drawables = new Drawable[count];
 
         for(int i=0; i < count; i++){

@@ -13,6 +13,7 @@ import com.kshilovskiy.livescrollview.OnItemClickListener;
 
 public class ScrollViewActivity extends Activity implements OnItemClickListener {
     public static final String TYPE_MULTITYPE = "com.kshilovskiy.listview.action.TYPE_MULTITYPE";
+
     /**
      * Called when the activity is first created.
      */
@@ -25,13 +26,20 @@ public class ScrollViewActivity extends Activity implements OnItemClickListener 
         setContentView(R.layout.simple_scrollview);
 
         LiveScrollView liveScrollView = (LiveScrollView) findViewById(R.id.liveScrollView);
+
+        //Specifies the view we want to resize
         liveScrollView.setResizableViewId(R.id.imageView);
 
         SimpleArrayAdapter arrayAdapter;
+
         if(TYPE_MULTITYPE.equals(action)){
             arrayAdapter = new MultiTypeAdapter(this, 0, GENRES);
+
             //You can set top offset programatically or use an xml attribute 'livescrollview:firstResizablePaddingTop'
             float topOffset = getResources().getDimension(R.dimen.top_offset);
+
+            //This attribute can also be set in XML layout but since we are using one layout for different adapter,
+            // set it programatically
             liveScrollView.setmFirstResizablePaddingTop(topOffset);
         }
         else{
